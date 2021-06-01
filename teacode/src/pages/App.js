@@ -7,8 +7,9 @@ import "../styles/App.css"
 class App extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {contacts: [], searchValue: ""}
+        this.state = {contacts: [], filteredContacts: [], searchValue: ""}
         this.onClicked = this.onClicked.bind(this)
+        this.updateSearch = this.updateSearch.bind(this)
     }
 
     onClicked(contact) {
@@ -23,7 +24,14 @@ class App extends React.Component {
     }
 
     updateSearch(newValue) {
+        if (newValue.length > 0) {
+            let filteredContacts = this.state.contacts.filter(c => {return c.first_name.includes(newValue) || c.last_name.includes(newValue)})
+            this.setState({filteredContacts: filteredContacts})
+        } else {
+            this.setState({filteredContacts: this.state.contacts})
+        }
 
+        this.setState({searchValue: newValue})
     }
 
     componentDidMount() {
@@ -33,11 +41,10 @@ class App extends React.Component {
                     contact.checked = false
                 })
 
-                this.setState({contacts: data})
+                this.setState({contacts: data, filteredContacts: data})
             })
             .catch(error => {
-                // TODO Error message
-                return
+                console.error(error)
             }
         )
     }
@@ -50,7 +57,7 @@ class App extends React.Component {
                 </header>
 
                 <SearchBar searchValue={this.state.searchValue} updateSearch={this.updateSearch}/>
-                <ContactsList contacts={this.state.contacts} onClicked={this.onClicked}/>
+                <ContactsList contacts={this.state.filteredContacts} onClicked={this.onClicked}/>
             </div>
         )
     }
