@@ -9,5 +9,8 @@
 To run the application 
 ```
 cd TeaCode-Zadanie/teacode
+
+npm install
+
 npm run start
 ```
