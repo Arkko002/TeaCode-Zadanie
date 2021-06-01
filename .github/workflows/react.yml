@@ -9,6 +9,10 @@ on:
   pull_request:
     branches: [ master, dev ]
 
+defaults:
+  run:
+    working-directory: teacode
+
 jobs:
   build:
 
