@@ -7951,6 +7951,11 @@
   "resolved" "https://registry.npmjs.org/slash/-/slash-1.0.0.tgz"
   "version" "1.0.0"
 
+"slash@^4.0.0":
+  "integrity" "sha512-3dOsAHXXUkQTpOYcoAxLIorMTp4gIQr5IW3iVb7A7lFIp0VHhnynm9izx6TssdrIcVIESAlVjtnO2K8bg+Coew=="
+  "resolved" "https://registry.npmjs.org/slash/-/slash-4.0.0.tgz"
+  "version" "4.0.0"
+
 "slice-ansi@1.0.0":
   "integrity" "sha512-POqxBK6Lb3q6s047D/XsDVNPnF9Dl8JSaqe9h9lURl0OdNqy/ujDrOiIHtsqXMGbWWTIomRzAMaTyawAU//Reg=="
   "resolved" "https://registry.npmjs.org/slice-ansi/-/slice-ansi-1.0.0.tgz"
