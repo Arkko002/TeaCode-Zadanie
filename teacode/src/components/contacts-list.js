@@ -1,16 +1,13 @@
 import React from "react";
 import Contact from "./contact"
+import "../styles/contact-list.css"
 
 class ContactsList extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         if (this.props.contacts !== undefined && this.props.contacts.length > 0) {
             return (
                 <div className="contacts-div">
-                    <ul className="contacts-ul">
+                    <ul className="contacts-list">
                         {this.props.contacts.map(contact => (
                            <li key={contact.id}> <Contact contact={contact} onClicked={this.props.onClicked}/> </li>
                         ))}

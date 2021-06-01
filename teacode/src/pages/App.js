@@ -2,6 +2,7 @@ import React from "react";
 import Api from "../adapters/api";
 import SearchBar from "../components/search-bar";
 import ContactsList from "../components/contacts-list"
+import "../styles/App.css"
 
 class App extends React.Component {
     constructor(props) {
@@ -18,6 +19,11 @@ class App extends React.Component {
                                 .map(c => {return c.id})
 
         console.log(checkedArr.join(", "))
+        this.forceUpdate()
+    }
+
+    updateSearch(newValue) {
+
     }
 
     componentDidMount() {
