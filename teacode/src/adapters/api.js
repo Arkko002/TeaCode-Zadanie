@@ -13,6 +13,6 @@ let getUserData = async () => {
     })
 }
 
-module.exports = {
+export default {
     getUserData
 }
